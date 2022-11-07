@@ -26,11 +26,7 @@ const sendTweets = []
 for(let count =tweets.length - 10;count<tweets.length; count++){
     if (count >= 0)
     {
-        const avatar = users.filter(obj => {
-            if(obj.username == tweets[count].username){
-                return obj.avatar
-            }
-        })
+        let avatar = users.find(obj => obj.username == tweets[count].username).avatar
         sendTweets.push(
             {
                 username: tweets[count].username,
